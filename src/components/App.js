@@ -4,11 +4,19 @@ import SongList from './SongList';
 
 const App = (props) => {
     return (
-        <div>
+      <div className="ui container grid">
+        <div className="ui row">
+          <div className="desktop sixteen wide tablet six wide computer column mobile six wide">
             <h1>Select</h1>
-            <SongList/>
+            <SongList />
+          </div>
+          <div className="desktop sixteen wide tablet eight wide computer column mobile six wide">
+            <h1>Select</h1>
+            <SongList />
+          </div>
         </div>
-    )
+      </div>
+    );
 }
 
 export default App;

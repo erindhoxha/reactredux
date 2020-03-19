@@ -11,15 +11,19 @@ class SongList extends Component {
     }
     click = (song) => {
        this.props.dispatch(selectSong(song));
+       console.log(this.props);
     }
     render() {
         return (
             <div className="ui list">
                     {this.props.songs.map(song => {
                         return (
-                        <div className="content" key={song.title} onClick={() => this.click(song)}>
-                            <a className="item">{song.title}</a>
-                            <div className="description">{song.duration}</div>
+                        <div className="item" key={song.title} onClick={() => this.click(song)}>
+                            <div className="right floated content">
+                                <button className="ui button primary">Select</button>
+                            </div>
+                            <div className="content">{song.title}</div>
+                            <div className="content">{song.duration}</div>
                         </div>
                         );
                     })}
@@ -29,7 +33,10 @@ class SongList extends Component {
 }
 
 const getMyState = state => {
-    return { songs: state.songs };
+    return { 
+        songs: state.songs,
+        selectedSong: state.selectedSong
+    };
 }
 
 export default connect(getMyState)(SongList);
