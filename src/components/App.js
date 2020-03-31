@@ -1,6 +1,7 @@
 import React from 'react';
 import { selectSong } from '../actions';
 import SongList from './SongList';
+import SongDetail from "./SongDetail";
 
 const App = (props) => {
     return (
@@ -11,8 +12,7 @@ const App = (props) => {
             <SongList />
           </div>
           <div className="desktop sixteen wide tablet eight wide computer column mobile six wide">
-            <h1>Select</h1>
-            <SongList />
+            <SongDetail />
           </div>
         </div>
       </div>
