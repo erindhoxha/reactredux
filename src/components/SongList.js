@@ -35,7 +35,6 @@ class SongList extends Component {
 const mapStateToProps = state => {
     return { 
         songs: state.songs,
-        selectedSong: state.selectedSong
     };
 }
 
